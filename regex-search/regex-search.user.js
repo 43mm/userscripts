@@ -2,7 +2,7 @@
 // @name         Regex Search
 // @namespace    https://github.com/anterem/userscripts
 // @match        *://*/*
-// @version      2.3
+// @version      2.4
 // @description  Search and highlight regex matches on webpage. Uses CSS Custom Highlight API.
 // @run-at       context-menu
 // @grant        GM.setValue
@@ -137,6 +137,7 @@
         await saveRegex(input.value);
         matches = [];
         current = -1;
+        countEl.textContent = "";
 
         // Clear existing highlights using clear as delete does not reliably repaint
         CSS.highlights.clear();
